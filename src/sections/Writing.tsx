@@ -5,21 +5,41 @@ import { ArrowUpRight } from "lucide-react";
 import { MediumIcon } from "@/components/icons";
 
 export function Writing() {
-  if (!site.writing || site.writing.length === 0) return null;
+  const medium: string = (site.socials as any).medium;
+
+  if (!site.writing || site.writing.length === 0) {
+    return (
+      <div id="writing">
+        <SectionHeader title="Writing" />
+        <Shell className="px-6 py-6 sm:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="flex items-center gap-3 font-mono text-[13px] text-[var(--muted)]"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 flex-none animate-pulse" />
+            <span>Starting to write soon, with articles on building full-stack &amp; AI products on the way.</span>
+          </motion.div>
+        </Shell>
+      </div>
+    );
+  }
 
   return (
     <div id="writing">
       <SectionHeader
         title="Writing"
         aside={
-          <a
-            href={(site.socials as any).medium}
+          medium && <a
+            href={medium}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 font-mono text-[11px] text-[var(--soft)] hover:text-[var(--fg)] transition-colors group/header"
           >
             <MediumIcon className="size-3.5" />
-            <span className="hidden sm:inline">{(site.socials as any).medium.replace(/^https?:\/\//, "")}</span>
+            <span className="hidden sm:inline">{medium.replace(/^https?:\/\//, "")}</span>
             <ArrowUpRight className="size-3 text-[var(--soft)] group-hover/header:translate-x-0.5 group-hover/header:-translate-y-0.5 transition-transform" />
           </a>
         }

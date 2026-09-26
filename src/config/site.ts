@@ -8,6 +8,10 @@ export type Project = {
   featured?: boolean;
   status?: string;
   image?: string;
+  /** Portrait phone screenshots, shown as tilted devices instead of `image` */
+  mobileImages?: string[];
+  /** Full-resolution images opened when the preview is clicked (defaults to mobileImages / image) */
+  screenshots?: string[];
   categories?: ("Frontend" | "Backend" | "Fullstack")[];
 };
 
@@ -33,14 +37,14 @@ export type Post = {
 export const site = {
   name: "Manan Surati",
   firstName: "Manan",
-  url: "",
+  url: "https://manan-builds.vercel.app",
   quote: {
     text: "Simplicity is prerequisite for reliability.",
     author: "Edsger W. Dijkstra",
   },
   profileImages: [
     "/profile.jpg",
-    "/profile2.png",
+    "/profile2.jpg",
   ],
   bannerImage: "/images/cover.jpg",
   socialBannerImage: "/social-banner.png",
@@ -112,9 +116,12 @@ export const site = {
       stack: ["Next.js 16", "React 19", "TypeScript", "Prisma", "PostgreSQL (Neon)", "Auth.js", "Tailwind CSS v4", "Recharts"],
       year: "2026",
       links: {
-        source: "https://github.com/Manan005",
+        live: "https://peoplepay360-black.vercel.app/login",
+        source: "https://github.com/Manan005/Odoo_Hack_OFF",
       },
       featured: true,
+      image: "/project-images/hr-payroll.jpg",
+      screenshots: ["/project-images/hr-payroll-full.jpg"],
       categories: ["Fullstack", "Backend"],
     },
     {
@@ -126,9 +133,10 @@ export const site = {
       stack: ["React Native", "Expo", "TypeScript", "Supabase", "Reanimated", "Weather API"],
       year: "2026",
       links: {
-        source: "https://github.com/Manan005",
+        source: "https://github.com/Manan005/closet_app_native",
       },
       featured: true,
+      mobileImages: ["/project-images/smart-wardrobe-1.jpg", "/project-images/smart-wardrobe-2.jpg"],
       categories: ["Frontend", "Fullstack"],
     },
     {
@@ -143,6 +151,8 @@ export const site = {
         source: "https://github.com/Manan005/Digital-Wellbeing-Desktop---Web-Extension",
       },
       featured: true,
+      image: "/project-images/digital-wellbeing.jpg",
+      screenshots: ["/project-images/digital-wellbeing-full.jpg"],
       categories: ["Frontend"],
     },
     {

@@ -26,15 +26,16 @@ export function WritingPage() {
           <Reveal delay={0.1}>
             <div className="mt-8 rounded-2xl border border-neutral-800 bg-neutral-900/40 p-8 backdrop-blur-md text-center">
               <BookOpen size={32} className="text-neutral-500 mx-auto mb-3" />
-              <h3 className="font-serif text-2xl text-neutral-200">Articles Coming Soon</h3>
+              <h3 className="font-serif text-2xl text-neutral-200">Starting to Write Soon</h3>
               <p className="mt-2 text-neutral-400 text-sm max-w-md mx-auto">
-                Currently drafting deep-dive articles on WebSocket state engines, local-first browser IDE architectures, and PostgreSQL performance tuning.
+                Articles on building full-stack &amp; AI products, and the lessons learned along the way, are on their way. Check back soon.
               </p>
             </div>
           </Reveal>
         )}
 
         {/* Medium / External Publication Card */}
+        {site.socials.medium && (
         <Reveal delay={0.2}>
           <div className="mt-12 rounded-3xl border border-neutral-800 bg-neutral-900/40 p-8 backdrop-blur-xl flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
@@ -57,6 +58,7 @@ export function WritingPage() {
             </a>
           </div>
         </Reveal>
+        )}
       </div>
     </main>
   );

@@ -11,3 +11,8 @@ next-env.d.ts
 .vercel
 .env*
 /dist
+
+
+public/images/profile.jpg
+public/images/profile2.jpg
+

@@ -13,7 +13,7 @@ export function VisitorProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const fetchCount = async () => {
-      const BASELINE = 6389;
+      const BASELINE = 0;
       const KEY = "manan005_portfolio_views";
       const hasVisited = sessionStorage.getItem("has_visited_session");
       
@@ -38,7 +38,7 @@ export function VisitorProvider({ children }: { children: React.ReactNode }) {
         }
       } catch (error) {
         console.error("Error fetching visitor count:", error);
-        // Fallback gracefully so we never show an error or 0
+        // Fallback gracefully so we never show an error
         setCount(BASELINE);
       } finally {
         setIsLoading(false);
