@@ -2,34 +2,9 @@ import { useEffect, useState } from "react";
 import { Shell, GapBand, SectionHeader } from "@/components/Layout";
 import { site } from "@/config/site";
 import { ArrowRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-
-const QUOTES = [
-  {
-    text: "When something is important enough, you do it even if the odds are not in your favor.",
-    author: "Elon Musk",
-  },
-  {
-    text: "The biggest risk is not taking any risk.",
-    author: "Mark Zuckerberg",
-  },
-  {
-    text: "The people who are crazy enough to think they can change the world are the ones who do.",
-    author: "Steve Jobs",
-  },
-  {
-    text: "I’ve decided to become the Pirate King. If I die trying, then at least I die fighting for my dream.",
-    author: "Monkey D. Luffy",
-  },
-  {
-    text: "If you don't like your destiny, don't accept it.",
-    author: "Naruto Uzumaki",
-  },
-];
 
 export function Footer() {
   const [localTime, setLocalTime] = useState<string>("");
-  const [quoteIndex, setQuoteIndex] = useState(0);
 
   useEffect(() => {
     const updateTime = () => {
@@ -47,13 +22,6 @@ export function Footer() {
     updateTime();
     const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setQuoteIndex((prev) => (prev + 1) % QUOTES.length);
-    }, 6000);
-    return () => clearInterval(timer);
   }, []);
 
   return (
@@ -74,35 +42,8 @@ export function Footer() {
         </a>
       </Shell>
 
-      {/* Quote Band */}
-      <GapBand className="border-t border-[var(--line)]" />
-      <div className="w-full border-y border-[var(--line)]">
-        <Shell className="px-8 py-12 text-center min-h-[160px] flex flex-col items-center justify-center bg-[var(--bg)] select-none">
-          <div className="w-full max-w-[580px] min-h-[140px] flex flex-col items-center justify-center overflow-hidden">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={quoteIndex}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="flex flex-col items-center"
-              >
-                <span className="font-serif text-4xl text-[var(--soft)] leading-none">&ldquo;</span>
-                <p className="font-serif mx-auto -mt-2 max-w-md text-[20px] sm:text-[22px] italic leading-snug text-[var(--fg)]">
-                  {QUOTES[quoteIndex].text}
-                </p>
-                <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.3em] text-[var(--soft)] font-bold">
-                  — {QUOTES[quoteIndex].author}
-                </p>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </Shell>
-      </div>
-
       {/* Footer Bottom */}
-      <GapBand h="h-5" />
+      <GapBand h="h-5" className="border-t border-[var(--line)]" />
       <div className="w-full border-t border-[var(--line)]">
         <Shell className="border-b-0 px-6 py-8 text-center sm:px-8">
           <p className="text-[14.5px] text-[var(--muted)]">
