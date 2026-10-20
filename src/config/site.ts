@@ -78,7 +78,7 @@ export const site = {
     twitter: "https://x.com/mananB_S",
     linkedin: "https://www.linkedin.com/in/manan-surati",
     email: "mailto:manansurti123@gmail.com",
-    resume: "https://drive.google.com/file/d/13fJfjPNuseieo9gKXBB6KoBDONIUJumY/view?usp=drive_link",
+    resume: "https://drive.google.com/file/d/1-pnjaofABOqfq3ktJ6nMUi8N4IOrdCqT/view?usp=drive_link",
     discord: "",
     medium: "",
   },
