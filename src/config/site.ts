@@ -86,7 +86,7 @@ export const site = {
     {
       company: "SWYN Digital",
       role: "Full Stack Developer Intern",
-      period: "Aug 2026 – Present",
+      period: "Aug 2026 – Oct 2026",
       blurb:
         "Built a multi-tenant rental management platform (NestJS, MySQL, Next.js) with tenant isolation, role-based permissions and token auth, and an animated 3D company landing page with Next.js, Three.js and GSAP. Integrated the WhatsApp Cloud API for booking and payment notifications, and redesigned the staff interface with a new design system, dark mode and visual regression testing.",
       url: "",
@@ -125,19 +125,35 @@ export const site = {
       categories: ["Fullstack", "Backend"],
     },
     {
-      title: "Smart Wardrobe Manager",
+      title: "Zero-Cloud",
       blurb:
-        "A cross-platform mobile app for efficient wardrobe tracking and \"Cost Per Wear\" visualization, with weather-aware daily outfit suggestions.",
+        "A privacy-first, 100% offline codebase onboarding and semantic search engine: index any local repository and ask natural-language questions about it without a single line of code leaving your machine.",
       story:
-        "Engineered a responsive \"Bento Grid\" dashboard using React Native Reanimated for smooth, 60fps interactions. A context-aware \"Smart Shuffle\" feature uses live weather data to automate daily outfit suggestions, backed by Supabase and Supabase Auth.",
-      stack: ["React Native", "Expo", "TypeScript", "Supabase", "Reanimated", "Weather API"],
+        "Built for the Supermemory Local Hackathon. A Node.js crawler walks the repository (honoring .gitignore and skipping build artifacts), splits files into overlapping chunks tagged with file path, language and line ranges, and indexes them into Supermemory Local running in Docker, which generates BGE-base (768-d) embeddings on-device.\n\nSearch queries the v4 memory layer with a raw v3 vector-search fallback, returning exact file paths, line ranges and relevance scores. Container-tag namespaces keep multiple repositories isolated, and re-indexing a scope automatically flushes its old index.",
+      stack: ["React 19", "Vite", "Tailwind CSS v4", "Node.js", "Express.js", "Supermemory Local", "Docker"],
       year: "2026",
       links: {
-        source: "https://github.com/Manan005/closet_app_native",
+        source: "https://github.com/Manan005/zero-cloud_sm_67",
       },
       featured: true,
-      mobileImages: ["/project-images/smart-wardrobe-1.jpg", "/project-images/smart-wardrobe-2.jpg"],
-      categories: ["Frontend", "Fullstack"],
+      image: "/project-images/zero-cloud.jpg",
+      screenshots: ["/project-images/zero-cloud-full.jpg"],
+      categories: ["Fullstack", "Backend"],
+    },
+    {
+      title: "Video Intelligence Pipeline",
+      blurb:
+        "A modular Python video-intelligence pipeline for transcription and interview-style video insights.",
+      story:
+        "Built around OpenAI Whisper for speech-to-text and served through FastAPI, with a modular pipeline design that turns raw interview videos into transcripts and structured insights.",
+      stack: ["Python", "FastAPI", "OpenAI Whisper"],
+      year: "2026",
+      links: {
+        source: "https://github.com/Manan005",
+      },
+      featured: true,
+      status: "Hackathon Winner",
+      categories: ["Backend"],
     },
     {
       title: "Digital Wellbeing for Web Browser",
@@ -156,19 +172,19 @@ export const site = {
       categories: ["Frontend"],
     },
     {
-      title: "Video Intelligence Pipeline",
+      title: "Smart Wardrobe Manager",
       blurb:
-        "A modular Python video-intelligence pipeline for transcription and interview-style video insights.",
+        "A cross-platform mobile app for efficient wardrobe tracking and \"Cost Per Wear\" visualization, with weather-aware daily outfit suggestions.",
       story:
-        "Built around OpenAI Whisper for speech-to-text and served through FastAPI, with a modular pipeline design that turns raw interview videos into transcripts and structured insights.",
-      stack: ["Python", "FastAPI", "OpenAI Whisper"],
+        "Engineered a responsive \"Bento Grid\" dashboard using React Native Reanimated for smooth, 60fps interactions. A context-aware \"Smart Shuffle\" feature uses live weather data to automate daily outfit suggestions, backed by Supabase and Supabase Auth.",
+      stack: ["React Native", "Expo", "TypeScript", "Supabase", "Reanimated", "Weather API"],
       year: "2026",
       links: {
-        source: "https://github.com/Manan005",
+        source: "https://github.com/Manan005/closet_app_native",
       },
       featured: true,
-      status: "Hackathon Winner",
-      categories: ["Backend"],
+      mobileImages: ["/project-images/smart-wardrobe-1.jpg", "/project-images/smart-wardrobe-2.jpg"],
+      categories: ["Frontend", "Fullstack"],
     },
   ] as Project[],
   skills: [
