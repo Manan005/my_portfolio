@@ -12,7 +12,7 @@ export type Project = {
   mobileImages?: string[];
   /** Full-resolution images opened when the preview is clicked (defaults to mobileImages / image) */
   screenshots?: string[];
-  categories?: ("Frontend" | "Backend" | "Fullstack")[];
+  categories?: ("Frontend" | "Backend" | "Fullstack" | "AI / ML")[];
 };
 
 export type Job = {
@@ -125,6 +125,23 @@ export const site = {
       categories: ["Fullstack", "Backend"],
     },
     {
+      title: "Heart Disease Risk Prediction",
+      blurb:
+        "An end-to-end machine learning system that estimates a patient's risk of heart disease from routine clinical data, from exploratory analysis to a deployed web app that explains every prediction.",
+      story:
+        "Trained on the UCI Heart Disease dataset (920 patients from 4 hospitals). Logistic Regression, Random Forest and XGBoost were compared using grid search and 5-fold stratified cross-validation inside scikit-learn Pipelines. Logistic Regression won and reached 0.89 ROC-AUC on a held-out test set. The decision threshold was tuned on out-of-fold training predictions for at least 90% recall, which cut missed diagnoses from 17 to 11 (89% test recall).\n\nThe analysis uncovered two data-leakage traps. Every Swiss record stored cholesterol as 0, which made cholesterol look protective (correlation −0.23, flipping to +0.12 once fixed). Missing-value patterns also encoded the hospital itself: answering \"unknown\" for blood sugar raised the predicted risk from 50% to 84%. Both were fixed in the preprocessing pipeline, trading about 1 point of AUC for a model that is actually valid.\n\nThe Streamlit app returns a risk probability, a Low / Moderate / High level, and the factors pushing each prediction up or down.",
+      stack: ["Python", "Scikit-learn", "XGBoost", "Pandas", "NumPy", "Matplotlib", "Streamlit"],
+      year: "2026",
+      links: {
+        live: "https://heart-disease-risk-manan.streamlit.app/",
+        source: "https://github.com/Manan005/heart-disease-prediction",
+      },
+      featured: true,
+      image: "/project-images/heart-disease.jpg",
+      screenshots: ["/project-images/heart-disease-full.jpg", "/project-images/heart-disease-eval.jpg"],
+      categories: ["AI / ML"],
+    },
+    {
       title: "Zero-Cloud",
       blurb:
         "A privacy-first, 100% offline codebase onboarding and semantic search engine: index any local repository and ask natural-language questions about it without a single line of code leaving your machine.",
@@ -226,6 +243,9 @@ export const site = {
     "RAG",
     "NumPy",
     "Pandas",
+    "Scikit-learn",
+    "XGBoost",
+    "Streamlit",
     "Docker",
     "Google Cloud",
     "AWS",
