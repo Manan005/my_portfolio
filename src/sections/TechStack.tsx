@@ -53,6 +53,9 @@ const SKILL_ICONS: Record<string, string> = {
   RAG: "lucide:file-search",
   NumPy: "logos:numpy",
   Pandas: "logos:pandas-icon",
+  "Scikit-learn": "devicon:scikitlearn",
+  XGBoost: "lucide:network",
+  Streamlit: "logos:streamlit",
   Docker: "logos:docker-icon",
   "Google Cloud": "logos:google-cloud",
   AWS: "logos:aws",
@@ -74,7 +77,7 @@ const skillCategories: Record<string, string[]> = {
   Frontend: ["React", "Next.js", "Tailwind CSS", "Shadcn UI", "Figma", "HTML5", "CSS3", "React Native", "Expo"],
   Backend: ["Node.js", "Express.js", "REST APIs", "JWT", "NestJS", "FastAPI"],
   Databases: ["PostgreSQL", "MongoDB", "Prisma", "Supabase", "Firebase", "MySQL", "Appwrite"],
-  "AI / ML": ["LangChain", "LangGraph", "RAG", "NumPy", "Pandas"],
+  "AI / ML": ["LangChain", "LangGraph", "RAG", "NumPy", "Pandas", "Scikit-learn", "XGBoost", "Streamlit"],
   "DevOps & Tools": ["Git", "GitHub", "Postman", "Vercel", "Docker", "Google Cloud", "AWS", "n8n", "Linux"],
 };
 
